@@ -1,0 +1,31 @@
+<div class="container data-form">
+
+    <form (ngSubmit)="continue()">
+        <div *ngIf="!showProcesses">
+            <h2>Datos de inicio</h2>
+            <label>Nombre del proyecto</label>
+            <input required type="text" placeholder="Ej: Limpieza tubería" name="name" class="form-control" [(ngModel)]="item.name">
+            <div class="form-group" style="padding-top: 10px;">
+                <label for="procesos">Número de procesos</label>
+                <select [(ngModel)]="item.processLength" [ngModelOptions]="{standalone: true}" class="form-control" id="procesos">
+                    <option selected value="8">8</option>
+                    <option value="9"> 9</option>
+                    <option value="10"> 10</option>
+                </select>
+            </div>
+            <div class="addProcess">
+                <button class="btn btn-outline-warning mt-3 mb-3" (click)="agregar()" >Agregar procesos</button>
+            </div>
+        </div>
+        <div *ngIf="showProcesses">
+            <button class="btn btn-outline-warning mt-3" (click)="cambiarEstado()" ><i class="fas fa-arrow-alt-circle-left"></i> Atrás</button>
+            <h2>{{item.name}}</h2>
+            <div *ngFor="let process of processList; index as i">
+                <input style="margin-top: 10px;" required type="text" placeholder="Nombre proceso #{{i+1}}" name="name--{{i}}" class="form-control" [(ngModel)]="nameList[i]">         
+            </div>
+            <div class="addProcess">
+                <button class="btn btn-outline-warning btn-lg mt-3" type="submit">Continuar</button>
+            </div>
+        </div>
+    </form>
+</div>
