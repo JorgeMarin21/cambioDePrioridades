@@ -2,3 +2,12 @@
 h2 {
     overflow: hidden;
 }
+
+img {
+    /* En caso de querer centralizar una imagen más pequeña dentro del div */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+    height: 70%;
+ }

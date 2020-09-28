@@ -2,6 +2,10 @@
 
     <form (ngSubmit)="continue()">
         <div *ngIf="!showProcesses">
+            <div>
+                <img src="./../../../assets/surtigas.png"
+                    alt="surtigasLogo">
+            </div>
             <h2>Datos de inicio</h2>
             <label>Nombre del proyecto</label>
             <input required type="text" placeholder="Ej: Limpieza tubería" name="name" class="form-control" [(ngModel)]="item.name">
@@ -19,6 +23,10 @@
         </div>
         <div *ngIf="showProcesses">
             <button class="btn btn-outline-warning mt-3" (click)="cambiarEstado()" ><i class="fas fa-arrow-alt-circle-left"></i> Atrás</button>
+            <div>
+                <img src="./../../../assets/surtigas.png"
+                    alt="surtigasLogo">
+            </div>
             <h2>{{item.name}}</h2>
             <div *ngFor="let process of processList; index as i">
                 <input style="margin-top: 10px;" required type="text" placeholder="Nombre proceso #{{i+1}}" name="name--{{i}}" class="form-control" [(ngModel)]="nameList[i]">         

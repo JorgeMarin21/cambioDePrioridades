@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProcessInfoService } from 'src/app/services/process-info.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class FeedbackProyectoComponent implements OnInit {
   randomNumberOne: number;
   randomNumberTwo: number;
   constructor(
-    private processService: ProcessInfoService
+    private processService: ProcessInfoService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class FeedbackProyectoComponent implements OnInit {
     this.randomNumberOne = bodyInfo.num1;
     this.randomNumberTwo = bodyInfo.num2;
     console.log('info ---->', this.process, 'body--->', bodyInfo);
+  }
+
+  volver() {
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,18 +1,27 @@
 <div class="container">
+    <div>
+      <button class="btn btn-outline-warning mt-3" (click)="volver()" ><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+    </div>
+    <div>
+        <img src="./../../../assets/surtigas.png"
+            alt="surtigasLogo">
+    </div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Nombre del proceso: {{process.name}}</h1>
           <p class="lead">A continuación escribe los beneficios y retos que implica el cambio de prioridad de la realización del proceso 
-              '{{process.processList[randomNumberOne].name}}' por lo que se realizara antes que el proceso '{{process.processList[randomNumberOne].name}}'</p>
+              '{{process.processList[randomNumberOne].name}}' por lo que se realizara antes que el proceso '{{process.processList[randomNumberTwo].name}}'.</p>
         </div>
       </div>
 
     <h2>Gráficos del proceso</h2>
     <br>
     <div class="row">
-        <h5>Proceso antes del cambio de prioridades</h5><br>
+      <h5>Proceso antes del cambio de prioridades</h5><br>
+    </div>
+    <div class="row">
         <div *ngFor="let proceso of process.processList; let i = index">
-            <div class="col">
+            <div class="col col-botones">
                 <app-botones [name]="proceso.name" [isLast]=" i === process.processList.length-1">
                 </app-botones>
             </div>
@@ -21,8 +30,10 @@
     <br>
     <div class="row">
       <h5>Proceso después del cambio de prioridades</h5><br>
+    </div>
+    <div class="row">
         <div *ngFor="let proceso of listBackUp; let i = index">
-            <div class="col">
+            <div class="col col-botones">
                 <app-botones [name]="proceso.name" [isLast]=" i === listBackUp.length - 1"></app-botones>
             </div>
         </div>
@@ -37,13 +48,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Beneficios</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
         </div>
       </div>
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Retos</label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>

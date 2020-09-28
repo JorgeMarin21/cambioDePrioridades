@@ -42,19 +42,29 @@ export class FormularioComponent implements OnInit {
     console.log('name', this.nameList);
     let flag = false;
     this.processList.forEach((process, index) => {
-      if (this.nameList[index] === undefined ) {
+      if (this.nameList[index] === undefined || this.nameList[index] === '' ) {
         flag = true;
       }
     });
-    if (flag || this.nameList.length !== +this.item.processLength) {
+    if (flag || this.nameList.length !== this.processList.length
+        || this.nameList.length !== +this.item.processLength) {
+      console.log(this.nameList.length, this.item.processList.length, this.processList.length, +this.item.processLength);
       alert('Hay campos vacios');
     } else {
       this.item.processList = [];
       this.nameList.forEach(item => {
-        this.item.processList.push({name: item});
+        if (item.replace(/ /g, '') === '') {
+          flag = true;
+        } else {
+          this.item.processList.push({name: item});
+        }
       });
       console.log('exito', this.item.processList);
-      this.processService.addProcess(this.item);
+      if (this.nameList.length !== this.item.processList.length) {
+        alert('Hay campos vacios');
+      } else {
+        this.processService.addProcess(this.item);
+      }
     }
 
 
