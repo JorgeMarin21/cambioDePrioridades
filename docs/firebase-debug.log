@@ -1,0 +1,25 @@
+[debug] [2020-09-28T23:02:09.489Z] ----------------------------------------------------------------------
+[debug] [2020-09-28T23:02:09.493Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jorge.marin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-09-28T23:02:09.494Z] CLI Version:   8.11.2
+[debug] [2020-09-28T23:02:09.494Z] Platform:      win32
+[debug] [2020-09-28T23:02:09.494Z] Node Version:  v10.15.3
+[debug] [2020-09-28T23:02:09.497Z] Time:          Mon Sep 28 2020 18:02:09 GMT-0500 (Colombia Standard Time)
+[debug] [2020-09-28T23:02:09.497Z] ----------------------------------------------------------------------
+[debug] [2020-09-28T23:02:09.498Z] 
+[debug] [2020-09-28T23:02:09.515Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-28T23:02:09.516Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\jorge.marin\Desktop\Angular\cambio-de-procesos
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+

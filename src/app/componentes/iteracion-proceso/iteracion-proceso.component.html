@@ -1,7 +1,7 @@
 <div class="container" *ngIf="processService.isFilled() && processService.getShowProcesses()">
     <h2>Se muestra {{processService.getProcess().name}}</h2>
 
-    <div *ngIf="!isRandomed" class="row">
+    <div *ngIf="processService.getRecurrentProcess().length === 0" class="row">
         <div *ngFor="let proceso of processService.getProcess().processList; let i = index">
             <div class="col">
                 <app-botones [name]="proceso.name" [isLast]=" i === processService.getProcess().processList.length-1">
@@ -9,14 +9,14 @@
             </div>
         </div>
     </div>
-    <div *ngIf="isRandomed" class="row">
+    <div *ngIf="processService.getRecurrentProcess().length > 0" class="row">
         <div *ngFor="let proceso of randomList; let i = index">
             <div class="col">
                 <app-botones [name]="proceso.name" [isLast]=" i === randomList.length - 1"></app-botones>
             </div>
         </div>
-        <span>Hubo cambios, y el proceso "{{processService.getProcess().processList[randomNumberOne].name}}" ocupó el lugar del
-            proceso "{{processService.getProcess().processList[randomNumberTwo].name}}." </span>
+        <span>Hubo cambios, y el proceso "{{processService.getLastValueList()[randomNumberOne].name}}" ocupó el lugar del
+            proceso "{{processService.getLastValueList()[randomNumberTwo].name}}." </span>
     </div>
     <div class="row">
         <div class="col">
